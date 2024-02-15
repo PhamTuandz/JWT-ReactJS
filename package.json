@@ -1,0 +1,23 @@
+{
+  "name": "jwt-reactjs-node",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000J\u0000W\u0000T\u0000-\u0000R\u0000e\u0000a\u0000c\u0000t\u0000J\u0000S\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
+  }
+}
