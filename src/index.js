@@ -2,7 +2,7 @@ import express from "express";
 require("dotenv").config();
 
 import configViewEngine from "./config/viewEngine";
-import initWebRoutes from "./routes/api";
+import initWebRoutes from './routes/web';
 
 const app = express();
 
