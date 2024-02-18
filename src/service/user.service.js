@@ -15,35 +15,26 @@ const hashPassword = async (password) => {
 
 const createNewUser = async (email, username, password) => {
     let hash = await hashPassword(password);
-    connection.query(
-        "INSERT INTO users (email, username, password) VALUES (?,?,?)",
-        [email, username, hash],
-        (error, results, fields) => {
-            if (error) {
-                console.log("error", error);
-            }
-        }
-    );
+    const [rows, fields] = await connection.promise().query("INSERT INTO users (email, username, password) VALUES (?,?,?)", [email, username, hash]);
 };
 
 const getUserList = async () => {
-    //  connection.query("SELECT * FROM users", (error, results, fields) => {
-    //     if (error) {
-    //         console.log("error", error);
-    //         return []
-    //     }
-    //     if (results.length > 0) {
-    //         return results
-    //     }
-    //     return results
-    // });
-
     const [rows, fields] = await connection.promise().query("SELECT * FROM users");
-
     return rows;
 };
+
+const deleteUser = async (id) => {
+    const [rows, fields] = await connection.promise().query("DELETE FROM users WHERE id = ?", [id]);
+};
+
+const updateUser = async (id, email, username, password) => {
+    let hash = await hashPassword(password);
+    const [rows, fields] = await connection.promise().query("UPDATE users SET email = ?, username = ?, password = ? WHERE id = ?", [email, username, hash, id]);
+
+}
 
 module.exports = {
     createNewUser,
     getUserList,
+    deleteUser
 };
