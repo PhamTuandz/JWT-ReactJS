@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     roleId: DataTypes.INTEGER,
   }, {
     sequelize,
-    modelName: 'GroupRole',
+    modelName: 'Group_Roles',
   });
   return GroupRole;
 };

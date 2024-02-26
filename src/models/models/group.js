@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 
       Group.hasMany(models.User)
       Group.belongsToMany(models.Role, {
-        through: 'GroupRole'
+        through: 'Group_Roles'
       })
     }
   }
