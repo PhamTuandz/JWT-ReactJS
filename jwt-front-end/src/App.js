@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import Layout from "./components/Layout";
+import {
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import Login from "./components/Login";
+
+let router = createBrowserRouter([
+  { path: "/", element: <Layout />, children: [
+    {index:true, element:<><h3>Home</h3></>},
+    { path: "/news", element: <></> },
+    { path: "/about", element: <></> },
+    { path: "/contact", element: <></> },
+    { path: "/login", element: <Login /> },
+  ] },
+ 
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
 }
 
 export default App;
