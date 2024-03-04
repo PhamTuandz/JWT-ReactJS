@@ -2,6 +2,7 @@ import "./App.scss";
 import Layout from "./components/Layout";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 let router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ let router = createBrowserRouter([
       { path: "/contact", element: <></> },
     ],
   },
-  { path: "/login", element: <Login /> }
+  { path: "/login", element: <Login /> },
+  { path: "/register", element: <Register /> },
 ]);
 
 function App() {
