@@ -1,14 +1,15 @@
 import express from 'express';
 import { handleHome } from '../controller/homeController';
 import { handleCreateUser, handleUser,handleDeleteUser } from '../controller/userController';
-
+import { testApi } from '../controller/apiController';
 const router = express.Router();
 
 const initWebRoutes = (app) => {
-    router.get('/', handleHome);
-    router.get('/user', handleUser);
-    router.post('/user/create-user', handleCreateUser);
-    router.post('/del-user/:id', handleDeleteUser);
+    // router.get('/', handleHome);
+    // router.get('/user', handleUser);
+    // router.post('/user/create-user', handleCreateUser);
+    // router.post('/del-user/:id', handleDeleteUser);
+    router.get("/api/test-api", testApi)
     return app.use('/', router);
 }
 
